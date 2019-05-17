@@ -1,5 +1,4 @@
-import groovy.json.JsonBuilder;
-import groovy.json.JsonGenerator;
+import groovy.json.StringEscapeUtils;
 import io.restassured.RestAssured;
 import io.restassured.response.ValidatableResponse;
 import org.junit.Test;
@@ -29,23 +28,18 @@ public class WeatherTest {
 
         ValidatableResponse responseWeatherIndex = RestAssured.given()//команда given это знак вопроса в запросе после которого пишутся параметры запроса
                 .param("type", "js")
-                .param("lang", "ua")
+                .param("lang", "uk")
                 .param("id", cityId)
                 .log().uri()
                 .get()
                 .then()
 //                .log().all()
                 .statusCode(200);
-
         String weather = responseWeatherIndex.extract().asString();
 
-        JsonBuilder jb = new JsonBuilder(weather);
 
-
-
-        System.out.println(jb);
-
-
+            String result = StringEscapeUtils.unescapeJava(weather);//
+            System.out.println(result);
 
     }
 }
