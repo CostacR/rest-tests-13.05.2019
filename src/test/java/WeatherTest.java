@@ -33,7 +33,7 @@ public class WeatherTest {
                 .log().uri()
                 .get()
                 .then()
-                .log().all()
+                .log().all()//print Json
                 .statusCode(200);
 
 
