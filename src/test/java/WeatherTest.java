@@ -26,20 +26,16 @@ public class WeatherTest {
 
         RestAssured.baseURI = "https://pinformer.sinoptik.ua/pinformer4.php";
 
-        ValidatableResponse responseWeatherIndex = RestAssured.given()//команда given это знак вопроса в запросе после которого пишутся параметры запроса
+        ValidatableResponse responseWeatherIndex = RestAssured.given()///команда given это знак вопроса в запросе после которого пишутся параметры запроса
                 .param("type", "js")
                 .param("lang", "uk")
                 .param("id", cityId)
                 .log().uri()
                 .get()
                 .then()
-//                .log().all()
+                .log().all()
                 .statusCode(200);
-        String weather = responseWeatherIndex.extract().asString();
 
-
-            String result = StringEscapeUtils.unescapeJava(weather);//
-            System.out.println(result);
 
     }
 }
