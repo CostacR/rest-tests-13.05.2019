@@ -1,4 +1,8 @@
-import com.sun.javafx.scene.traversal.Direction;
+package PetStore;
+
+import PetStore.models.CategoryModel;
+import PetStore.models.PetModel;
+import PetStore.models.TagModel;
 import io.restassured.RestAssured;
 import io.restassured.response.ValidatableResponse;
 import org.junit.Test;
@@ -62,20 +66,27 @@ public class PetStoreTest {
     String status = String.valueOf(Status.AVAILABLE);
 
 
-//    @Test
-//    public void addPetTest(){
-//        PetStoreTest obj = new PetStoreTest();
-//        System.out.println(obj.petId+obj.petName+obj.status);
-////        Object petName = {"id", 102, "name", "Troll"};
-//
-////        ValidatableResponse response = RestAssured.given()
-////                .log().uri()
-////                .param("id", petId)
-////                .param("name", )
-////
-////                .then()
-////                .log().all()
-////                .statusCode(200);
-//    }
+    @Test
+    public void addPetTest(){
+
+        PetModel petModel = new PetModel(
+                105,
+                new CategoryModel(),
+                "Droppy",
+                new String[]{"www.zoo.com"},
+                new TagModel[]{new TagModel()},
+                "AVAILABLE");
+
+
+        RestAssured.given()
+                .log().uri()
+//                .header("Content-Type", "application/json") //строки эквивалентны по смыслу
+                .contentType("application/xml")                 //строки эквивалентны по смыслу
+                .body(petModel)
+                .post(Config.CREATE_PET)
+                .then()
+                .log().all()
+                .statusCode(200);
+    }
 
 }

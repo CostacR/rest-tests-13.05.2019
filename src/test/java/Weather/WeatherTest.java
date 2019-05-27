@@ -1,3 +1,5 @@
+package Weather;
+
 import groovy.json.StringEscapeUtils;
 import io.restassured.RestAssured;
 import io.restassured.response.ValidatableResponse;
