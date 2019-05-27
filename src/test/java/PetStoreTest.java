@@ -19,7 +19,7 @@ public class PetStoreTest {
     @Test
     public void getPetByIdTest(){
 
-        int petId = 102;
+        int petId = 105;
 
         ValidatableResponse response = RestAssured.given()
                 .log().uri()
@@ -47,7 +47,7 @@ public class PetStoreTest {
     }
     @Test
     public void deletePetTest(){
-        int petId = 102;
+        int petId = 105;
 
         ValidatableResponse response = RestAssured.given()
                 .log().uri()
