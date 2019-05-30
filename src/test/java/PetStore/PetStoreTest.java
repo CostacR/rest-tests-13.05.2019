@@ -1,51 +1,57 @@
 package PetStore;
 
 import PetStore.models.CategoryModel;
-import PetStore.models.PetModel;
-import PetStore.models.TagModel;
-import io.restassured.RestAssured;
-import io.restassured.response.ValidatableResponse;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+                import PetStore.models.PetModel;
+                import PetStore.models.TagModel;
+                import io.restassured.RestAssured;
+                import io.restassured.response.ValidatableResponse;
+                import org.junit.Test;
+
+                import static org.hamcrest.Matchers.is;
 
 public class PetStoreTest {
-    private enum Status{
-        AVAILABLE,
-        PENDING,
-        SOLD
+                    private enum Status{
+                        AVAILABLE,
+                        PENDING,
+                        SOLD
+                    }
+
+                    static {
+                        RestAssured.baseURI = "https://petstore.swagger.io/v2";
+                    }
+                    private int idPet = 105;
+
+                    @Test
+                    public void allTests()  {
+//                        addPetTest();
+//                        getPetByIdTest();
+//                        deletePetTest();
+                        addPetTest();
+                        getPetByIdTest();
+                        updatePetTest();
+                        getPetByIdTest();
+                        checkPet();
+                        deletePetTest();
+                    }
+
+
+                    @Test
+                    public void checkPet(){
+                        System.out.println("check pet");
+                        RestAssured.given()
+                                .log().uri()
+                                .get(Config.GET_PET_BY_ID,idPet)
+                                .then()
+                                .assertThat()
+                                .statusCode(200)
+                                .body("id", is(idPet))
+                                .body("name", is("Mau"))
+                        ;
     }
 
-    static {
-        RestAssured.baseURI = "https://petstore.swagger.io/v2";
-    }
-    int idPet = 104;
-
-
-    @Test
-    public void allTests() throws InterruptedException {
-        addPetTest();
-        getPetByIdTest();
-        deletePetTest();
-        addPetTest();
-        getPetByIdTest();
-        updatePetTest();
-        getPetByIdTest();
-        System.out.println("All ok");
-        Thread.sleep(3000);
-        deletePetTest();
-
-    }
-
-
-    @Test
-    public void checkPet(){
-        getPetByIdTest();
-
-    }
     @Test
     public void getPetByIdTest(){
-
+        System.out.println("get id");
         int petId = 105;
 
         ValidatableResponse response = RestAssured.given()
@@ -76,6 +82,7 @@ public class PetStoreTest {
     }
     @Test
     public void deletePetTest(){
+        System.out.println("delete pet");
         int petId = 105;
 
         ValidatableResponse response = RestAssured.given()
@@ -89,10 +96,9 @@ public class PetStoreTest {
 //    int petId = 102;
 //    String petName = "Stinger";
 //    String status = String.valueOf(Status.AVAILABLE);
-
-
     @Test
     public void addPetTest(){
+        System.out.println("add pet");
 
         PetModel petModel = new PetModel(
                 105,
@@ -116,6 +122,7 @@ public class PetStoreTest {
 
     @Test
     public void updatePetTest(){
+        System.out.println("update pet");
         PetModel petModel = new PetModel(
                 105,
                 new CategoryModel(),
