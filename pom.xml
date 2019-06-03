@@ -16,6 +16,7 @@
             <version>2.0.50</version>
         </dependency>
 
+        <!--to enabled default Serenity loggin-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -29,6 +30,12 @@
                 <version>4.12</version>
                 <scope>test</scope>
             </dependency>
+
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-junit</artifactId>
+            <version>2.0.50</version>
+        </dependency>
 
         <!--for JavaObj-->
         <!--<dependency>-->
