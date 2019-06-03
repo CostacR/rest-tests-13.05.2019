@@ -127,15 +127,7 @@ public class PetStoreTest {
         petEndpoint
                 .updatePet(petModel)
                 .statusCode(200);
-//
-//        RestAssured.given()
-//                .log().uri()
-//                .contentType("application/json")
-//                .body(petModel)
-//                .post(Config.CREATE_PET)
-//                .then()
-//                .log().all()
-//                .statusCode(200);
+
 
     }
 //        for (Status status : Status.values()) {

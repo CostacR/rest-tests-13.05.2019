@@ -2,14 +2,17 @@ package PetStore.Test;
 import PetStore.endpoints.PetEndpoint;
 import PetStore.models.CategoryModel;
 import PetStore.models.PetModel;
+import PetStore.models.PetOrder;
 import PetStore.models.TagModel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-public class PetUpdateTest {
+
+public class PetStoreOrderTest {
     private PetEndpoint petEndpoint = new PetEndpoint();
     private PetModel petModel;
-    int idPetModel = 107;
+    private PetOrder petOrder;
+    int idPetModel1 = 107;
 
     @Before
     public void preCondition(int idPetModel){
@@ -33,26 +36,11 @@ public class PetUpdateTest {
     }
 
     @Test
-    public void orderTest(){
+    public void orderTest(int idPetModel1){
+        petOrder = new PetOrder();
+
 
     }
-
-//    @Test
-//    public void updatePetTest(){
-//
-//        petModel.setName("Doopy");
-//        petModel.setStatus("SOLD");
-//
-//        petEndpoint
-//                .updatePet(petModel)
-//                .statusCode(200);
-//
-//        petEndpoint
-//                .getPetById(petModel.getId())
-//                .statusCode(200);
-//
-//    }
-    //создаем животных для заказа.
+}
 //Делаем заказ. Просмотреть заказ.Указываем аЙдИ. Просмотреть заказ. Удалить созданное (почитсить за собой)
 // Включить проверку ResponseBody
-}
