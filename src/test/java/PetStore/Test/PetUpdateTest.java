@@ -6,15 +6,15 @@ import PetStore.models.TagModel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 public class PetUpdateTest {
     private PetEndpoint petEndpoint = new PetEndpoint();
     private PetModel petModel;
-    int idPetModel = 107;
 
     @Before
-    public void preCondition(int idPetModel){
+    public void preCondition(){
         petModel = new PetModel(
-                idPetModel,
+                107,
                 new CategoryModel(),
                 "Zorg-107",
                 new String[]{"www.zoo.com"},
@@ -32,26 +32,23 @@ public class PetUpdateTest {
                 .statusCode(200);
     }
 
+
+
     @Test
-    public void orderTest(){
+    public void updatePetTest(){
+
+        petModel.setName("Doopy");
+        petModel.setStatus("SOLD");
+
+        petEndpoint
+                .updatePet(petModel)
+                .statusCode(200);
+
+        petEndpoint
+                .getPetById(petModel.getId())
+                .statusCode(200);
 
     }
-
-//    @Test
-//    public void updatePetTest(){
-//
-//        petModel.setName("Doopy");
-//        petModel.setStatus("SOLD");
-//
-//        petEndpoint
-//                .updatePet(petModel)
-//                .statusCode(200);
-//
-//        petEndpoint
-//                .getPetById(petModel.getId())
-//                .statusCode(200);
-//
-//    }
     //создаем животных для заказа.
 //Делаем заказ. Просмотреть заказ.Указываем аЙдИ. Просмотреть заказ. Удалить созданное (почитсить за собой)
 // Включить проверку ResponseBody
