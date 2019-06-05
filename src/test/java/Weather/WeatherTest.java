@@ -23,7 +23,7 @@ public class WeatherTest {
 //    }
     @Test
     public void getWeatherPerCityTest (){
-        String cityName = "Харків";
+        String cityName = "LVIV";
         RestAssured.baseURI = "https://pinformer.sinoptik.ua/"; //URL - запроса
       //  RestAssured.basePath = "search.php";//первый вариант передачи BasePath через параметр
 
@@ -43,8 +43,8 @@ public class WeatherTest {
 
         String cityId = responseCityIndex.extract().asString();
         System.out.println(cityId);
-//        cityId = cityId.substring(cityId.lastIndexOf("|")+1);
-        cityId = cityId.substring(cityId.indexOf(10));
+        cityId = cityId.substring(cityId.lastIndexOf("|")+1);
+//        cityId = cityId.substring(cityId.indexOf(10));
         System.out.println(cityId);
 
        // RestAssured.basePath = "pinformer4.php";

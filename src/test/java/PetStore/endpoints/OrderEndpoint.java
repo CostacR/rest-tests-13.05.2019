@@ -6,6 +6,11 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
 public class OrderEndpoint {
+    public enum Status{
+        placed,
+        transporting,
+        closed
+    }
 
     public RequestSpecification given (){
         return RestAssured.given()

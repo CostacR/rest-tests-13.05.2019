@@ -19,7 +19,7 @@ public class PetOrder {
 //        this.completeOrder = completeOrder;
 //    }
 
-    public PetOrder() {
+    public PetOrder(int i, int i1, int i2, String placed, boolean b) {
         this.id = id;
         this.petId = petId;
         this.quantity = quantity;

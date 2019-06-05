@@ -73,14 +73,14 @@ public class PetStoreTest {
 //        System.out.println("pet - "+petId);
 //    }
 
-    @Test
-    public void getPetByStatus() {
-        for (Status status : Status.values()) {
-            petEndpoint
-                    .getPetByStatus(status)
-                    .statusCode(200);
-        }
-    }
+//    @Test
+//    public void getPetByStatus() {
+//        for (Status status : Status.values()) {
+//            petEndpoint
+//                    .getPetByStatus(status)
+//                    .statusCode(200);
+//        }
+//    }
 
 //    @Test
 //    public void deletePetTest(){
