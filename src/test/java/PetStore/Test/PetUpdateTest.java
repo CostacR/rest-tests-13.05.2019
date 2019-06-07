@@ -10,19 +10,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-//import static petstore.endpoints.PetEndpoint.*;
-
 @RunWith(SerenityRunner.class)
 public class PetUpdateTest {
 
     @Steps
-    private PetEndpoint petEndpoint = new PetEndpoint();
+    private PetEndpoint petEndpoint;
     private PetModel petModel;
 
     @Before
     public void preCondition(){
         petModel = new PetModel(
-                107,
+                105,
                 new CategoryModel(),
                 "Zorg-107",
                 new String[]{"www.zoo.com"},
@@ -57,7 +55,5 @@ public class PetUpdateTest {
                 .statusCode(200);
 
     }
-    //создаем животных для заказа.
-//Делаем заказ. Просмотреть заказ.Указываем аЙдИ. Просмотреть заказ. Удалить созданное (почитсить за собой)
-// Включить проверку ResponseBody
+
 }

@@ -13,24 +13,30 @@ import static org.hamcrest.core.Is.is;
 
 public class PetStoreOrderTest {
     private OrderEndpoint orderEndpoint = new OrderEndpoint();
+    private PetEndpoint petEndpoint = new PetEndpoint();
     private PetModel petModel;
     private PetOrder petOrder;
 
     @Before
     public void preCondition( ){
-        petOrder = new PetOrder(
-                1,
-                107,
-                5,
-                "placed",
-                false);
         petModel = new PetModel(
-                107,
+                105,
                 new CategoryModel(),
                 "Zorg-107",
                 new String[]{"www.zoo.com"},
                 new TagModel[]{new TagModel()},
                 "AVAILABLE");
+        petEndpoint
+                .createPet(petModel)
+                .statusCode(200);
+
+        petOrder = new PetOrder(
+                1,
+                105,
+                2,
+                "placed",
+                true);
+
 
     }
 
@@ -44,6 +50,7 @@ public class PetStoreOrderTest {
 
     @Test
     public void orderTest(){
+
         orderEndpoint
                 .createOrder(petOrder)
                 .statusCode(200);
