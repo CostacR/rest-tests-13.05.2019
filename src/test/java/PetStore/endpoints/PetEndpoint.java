@@ -35,7 +35,6 @@ public class PetEndpoint {
 
     @Step
     public ValidatableResponse getPetById(int petId){
-//        System.out.println("getPetIdSOUT");
         log.info("getPetId__999_Log");
         return given()
               .get(Config.GET_PET_BY_ID, petId)
