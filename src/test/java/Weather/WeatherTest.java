@@ -71,7 +71,7 @@ public class WeatherTest {
                 .log().all()
                 ;
 
-        System.out.println(responseWeatherIndex.extract().path("'{pcity}'"));//строка достаёт из JSON по имени тега данные
+        System.out.println(String.valueOf(responseWeatherIndex.extract().path("'{pcity}'")));//строка достаёт из JSON по имени тега данные
         System.out.println(cityId.length());
 
 //groovyPath

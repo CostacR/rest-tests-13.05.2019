@@ -1,38 +1,28 @@
 package PetStore.models;
 
-import java.util.Date;
-
 public class PetOrder {
-    private Date date = new Date();
     private int id;
     private int petId;
     private int quantity;
+    private String shipDate;
     private String status;
     private boolean completeOrder;
 
-//    public PetOrder(Date date, int id, int petId, int quantity, String status, boolean completeOrder) {
-//        this.date = date;
-//        this.id = id;
-//        this.petId = petId;
-//        this.quantity = quantity;
-//        this.status = status;
-//        this.completeOrder = completeOrder;
-//    }
-
-    public PetOrder(int i, int i1, int i2, String placed, boolean b) {
+    public PetOrder(int id, int petId, int quantity, String shipDate, String status, boolean completeOrder) {
         this.id = id;
         this.petId = petId;
         this.quantity = quantity;
+        this.shipDate = shipDate;
         this.status = status;
         this.completeOrder = completeOrder;
     }
 
-    public Date getDate() {
-        return date;
+    public String getShipDate() {
+        return shipDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setShipDate(String shipDate) {
+        this.shipDate = shipDate;
     }
 
     public int getId() {

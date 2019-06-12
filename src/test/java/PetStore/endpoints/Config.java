@@ -9,7 +9,7 @@ public class Config {
     final static String CREATE_PET = "pet";
 
     final static String CREATE_ORDER = "store/order";
-    final static String GET_ORDER_BY_ID ="store/order{orderId}";
+    final static String GET_ORDER_BY_ID ="store/order/{orderId}";
     final static String GET_ORDER_INVENTORY = "/store/inventory";
     final static String GET_DELETE_ORDER_BY_ID = "/store/order/{orderId}";
 
