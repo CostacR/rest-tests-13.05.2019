@@ -1,4 +1,4 @@
-package PetStore.models;
+package petStore.models;
 
 public class CategoryModel {
 

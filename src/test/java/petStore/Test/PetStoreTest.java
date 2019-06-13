@@ -1,12 +1,15 @@
-package petStore.Test;
+package PetStore.Test;
 
-import petStore.endpoints.PetEndpoint;
-import petStore.models.CategoryModel;
-                import petStore.models.PetModel;
-                import petStore.models.TagModel;
+import PetStore.endpoints.Config;
+import PetStore.endpoints.PetEndpoint;
+import PetStore.models.CategoryModel;
+                import PetStore.models.PetModel;
+                import PetStore.models.TagModel;
                 import io.restassured.RestAssured;
-import org.junit.Test;
+                import io.restassured.response.ValidatableResponse;
+                import org.junit.Test;
 
+import static PetStore.endpoints.PetEndpoint.*;
 import static org.hamcrest.Matchers.is;
 
 public class PetStoreTest {

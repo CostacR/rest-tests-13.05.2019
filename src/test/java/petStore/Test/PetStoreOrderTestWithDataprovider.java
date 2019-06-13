@@ -1,12 +1,13 @@
-package petStore.Test;
+package PetStore.Test;
 
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
+import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.junit.annotations.TestData;
 import org.junit.runner.RunWith;
 
-import petStore.endpoints.OrderEndpoint;
-import petStore.models.PetOrder;
+import PetStore.endpoints.OrderEndpoint;
+import PetStore.models.PetOrder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,7 +1,6 @@
-package PetStore.endpoints;
+package petStore.endpoints;
 
-import PetStore.models.PetModel;
-import io.restassured.RestAssured;
+import petStore.models.PetModel;
 
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;

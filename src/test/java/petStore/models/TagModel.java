@@ -1,4 +1,4 @@
-package petStore.models;
+package PetStore.models;
 
 public class TagModel {
 

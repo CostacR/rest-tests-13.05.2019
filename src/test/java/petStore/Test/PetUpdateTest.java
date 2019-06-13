@@ -1,8 +1,8 @@
-package PetStore.Test;
-import PetStore.endpoints.PetEndpoint;
-import PetStore.models.CategoryModel;
-import PetStore.models.PetModel;
-import PetStore.models.TagModel;
+package petStore.Test;
+import petStore.endpoints.PetEndpoint;
+import petStore.models.CategoryModel;
+import petStore.models.PetModel;
+import petStore.models.TagModel;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import org.junit.After;
