@@ -3,12 +3,14 @@ package petStore.tests;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.junit.annotations.Concurrent;
 import org.junit.runner.RunWith;
+import org.springframework.core.annotation.Order;
 import petStore.endpoints.PetEndpoint;
 import petStore.models.CategoryModel;
                 import petStore.models.PetModel;
                 import petStore.models.TagModel;
                 import io.restassured.RestAssured;
 import org.junit.Test;
+
 
 import static org.hamcrest.Matchers.is;
 
@@ -93,6 +95,7 @@ public class PetStoreTest {
 //    String petName = "Stinger";
 //    String status = String.valueOf(Status.AVAILABLE);
     @Test
+    @Order()
     public void addPetTest(){
          PetModel petModel = new PetModel(
                 105,
