@@ -21,7 +21,7 @@ public class UploadImageEndpoint {
     public ValidatableResponse uploadImage (int petId, String imageFileName){
 
         File file = new File("./"+ imageFileName);
-        System.out.println("file size"+file.length());
+
         String message = "additionalMetadata: null" +"\n"+"File uploaded to ./"
                 +imageFileName+", "+getSizeImage(imageFileName)+" bytes";
 

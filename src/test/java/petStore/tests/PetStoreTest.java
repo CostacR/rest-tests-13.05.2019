@@ -107,15 +107,15 @@ public class PetStoreTest {
                  .statusCode(200);
          }
 
-    @Test
-    public void getPetByIdTest(){
-        System.out.println("get id");
-        int petId = 105;
-
-        petEndpoint
-                .getPetById(petId)
-                .statusCode(200);
-    }
+//    @Test
+//    public void getPetByIdTest(){
+//        System.out.println("get id");
+//        int petId = 105;
+//
+//        petEndpoint
+//                .getPetById(petId)
+//                .statusCode(200);
+//    }
     @Test
     public void updatePetTest(){
         System.out.println("update pet");
