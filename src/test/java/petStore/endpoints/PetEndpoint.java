@@ -1,5 +1,6 @@
 package petStore.endpoints;
 
+import io.restassured.http.ContentType;
 import petStore.models.PetModel;
 
 import io.restassured.response.ValidatableResponse;

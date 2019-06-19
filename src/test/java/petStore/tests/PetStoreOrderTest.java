@@ -1,21 +1,27 @@
-package PetStore.Test;
-import PetStore.endpoints.OrderEndpoint;
-import PetStore.models.PetOrder;
+package petStore.tests;
+import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.junit.annotations.Concurrent;
+import org.junit.runner.RunWith;
+import petStore.endpoints.OrderEndpoint;
+import petStore.models.PetOrder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 
+@RunWith(SerenityRunner.class)
+@Concurrent(threads = "4")
 public class PetStoreOrderTest {
+
     private OrderEndpoint orderEndpoint = new OrderEndpoint();
     private PetOrder petOrder;
-    private String shipDate;
+    //private String shipDate;
 
     @Before
     public void preCondition( ) {
 
         String timeEndString = "T00:00:00.000+0000";
-        shipDate = "2019-06-12"+timeEndString;
+        String shipDate = "2019-06-12"+timeEndString;
 
         petOrder = new PetOrder(
                 1,

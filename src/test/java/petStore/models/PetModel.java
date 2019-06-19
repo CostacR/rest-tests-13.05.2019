@@ -1,4 +1,4 @@
-package PetStore.models;
+package petStore.models;
 
 public class PetModel {
 //    "{\n" +
@@ -76,6 +76,14 @@ public class PetModel {
 
     public PetModel(int id, CategoryModel category, String name, String[] photoUrls, TagModel[] tags, String status) {
         this.id = id;
+        this.category = category;
+        this.name = name;
+        this.photoUrls = photoUrls;
+        this.tags = tags;
+        this.status = status;
+    }
+
+    public PetModel(CategoryModel category, String name, String[] photoUrls, TagModel[] tags, String status) {
         this.category = category;
         this.name = name;
         this.photoUrls = photoUrls;

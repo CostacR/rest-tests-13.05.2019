@@ -1,17 +1,19 @@
-package PetStore.Test;
+package petStore.tests;
 
-import PetStore.endpoints.Config;
-import PetStore.endpoints.PetEndpoint;
-import PetStore.models.CategoryModel;
-                import PetStore.models.PetModel;
-                import PetStore.models.TagModel;
+import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.junit.annotations.Concurrent;
+import org.junit.runner.RunWith;
+import petStore.endpoints.PetEndpoint;
+import petStore.models.CategoryModel;
+                import petStore.models.PetModel;
+                import petStore.models.TagModel;
                 import io.restassured.RestAssured;
-                import io.restassured.response.ValidatableResponse;
-                import org.junit.Test;
+import org.junit.Test;
 
-import static PetStore.endpoints.PetEndpoint.*;
 import static org.hamcrest.Matchers.is;
 
+@RunWith(SerenityRunner.class)
+@Concurrent(threads = "4")
 public class PetStoreTest {
     private PetEndpoint petEndpoint = new PetEndpoint();
 
@@ -21,7 +23,7 @@ public class PetStoreTest {
                     }
                     private int idPet = 105;
 
-//                    @Test
+//                    @tests
 //                    public void allTests()  {
 ////                        addPetTest();
 ////                        getPetByIdTest();
@@ -35,7 +37,7 @@ public class PetStoreTest {
 //                    }
 
 
-//                    @Test
+//                    @tests
 //                    public void checkPet(){
 //                        System.out.println("check pet");
 //                        RestAssured.given()
@@ -49,16 +51,8 @@ public class PetStoreTest {
 //                        ;
 //    }
 
-    @Test
-    public void getPetByIdTest(){
-        System.out.println("get id");
-        int petId = 105;
 
-        petEndpoint
-                .getPetById(petId)
-                .statusCode(200);
-    }
-//    @Test
+//    @tests
 //    public void getPetByIdTest(){
 //        System.out.println("get id");
 //        int petId = 105;
@@ -73,7 +67,7 @@ public class PetStoreTest {
 //        System.out.println("pet - "+petId);
 //    }
 
-//    @Test
+//    @tests
 //    public void getPetByStatus() {
 //        for (Status status : Status.values()) {
 //            petEndpoint
@@ -82,7 +76,7 @@ public class PetStoreTest {
 //        }
 //    }
 
-//    @Test
+//    @tests
 //    public void deletePetTest(){
 //        System.out.println("delete pet");
 //        int petId = 105;
@@ -113,6 +107,15 @@ public class PetStoreTest {
                  .statusCode(200);
          }
 
+    @Test
+    public void getPetByIdTest(){
+        System.out.println("get id");
+        int petId = 105;
+
+        petEndpoint
+                .getPetById(petId)
+                .statusCode(200);
+    }
     @Test
     public void updatePetTest(){
         System.out.println("update pet");

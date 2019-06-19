@@ -1,10 +1,10 @@
-package PetStore.Test;
-import PetStore.endpoints.PetEndpoint;
-import PetStore.models.CategoryModel;
-import PetStore.models.PetModel;
-import PetStore.models.TagModel;
+package petStore.tests;
+import net.thucydides.junit.annotations.Concurrent;
+import petStore.endpoints.PetEndpoint;
+import petStore.models.CategoryModel;
+import petStore.models.PetModel;
+import petStore.models.TagModel;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
-import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.junit.annotations.TestData;
 import org.junit.After;
@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(SerenityParameterizedRunner.class)
+@Concurrent(threads = "4")
 public class PetUpdateDataProviderTest {
 
 
@@ -24,6 +25,7 @@ public class PetUpdateDataProviderTest {
         return Arrays.asList(new Object[][]{
                 {1, "Zooko", 200},
                 {2, "CoocooRoocoo", 200},
+//                {3, null, 200}
 
         });
     }
@@ -32,11 +34,16 @@ public class PetUpdateDataProviderTest {
     private String namePet;
     private int statusCode;
 
-    public PetUpdateDataProviderTest(int idPet, String namePet, int statusCode) {
+    public PetUpdateDataProviderTest(int idPet, String namePet, int statusCode)  {
         this.idPet = idPet;
         this.namePet = namePet;
         this.statusCode = statusCode;
     }
+
+//    public PetUpdateDataProviderTest(int idPet, int statusCode)  {
+//        this.idPet = idPet;
+//        this.statusCode = statusCode;
+//    }
 
     @Steps
     private PetEndpoint petEndpoint;

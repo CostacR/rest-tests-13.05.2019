@@ -1,4 +1,5 @@
-package petStore.Test;
+package petStore.tests;
+import net.thucydides.junit.annotations.Concurrent;
 import petStore.endpoints.PetEndpoint;
 import petStore.models.CategoryModel;
 import petStore.models.PetModel;
@@ -11,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityRunner.class)
+@Concurrent(threads = "4")
 public class PetUpdateTest {
 
     @Steps

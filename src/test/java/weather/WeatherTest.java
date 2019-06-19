@@ -13,7 +13,7 @@ import static org.hamcrest.core.Is.is;
 @RunWith(SerenityRunner.class)
 public class WeatherTest {
 
-//    @Test
+//    @tests
 //    public void getDroidNames (){
 //        get("https://swapi.co/api/people/1/")
 //                .then().statusCode(200)

@@ -66,7 +66,7 @@
                 <version>${surefire.version}</version>
                 <configuration>
                     <includes>
-                        <include>**/test/**/${test.name}.java</include>
+                        <include>**/tests/**/${test.name}.java</include>//запускает все тесты в папке test
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                     <skip>false</skip>
